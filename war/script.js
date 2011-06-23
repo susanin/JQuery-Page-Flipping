@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
 	$(".b-load > div").each(function(i){
 		var zi = 10 - i;
 		$(this).css('z-index',zi);
@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 
 		var marg = parseInt('-770');
-		$(".b-load .cur").animate({left:marg+"px",opacity:0.4}, 1500, 'swing');
+		$(".b-load .cur").animate({left:marg+"px",opacity:0.5}, 1500, 'swing');
 		$(".b-load > div").removeClass('cur');
 		nextSlide.addClass('cur');
 	});
