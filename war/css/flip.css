@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+.myflip.in {
+	-webkit-transform: rotateY(0);
+	-webkit-transform-origin: -100% 0;
+	-webkit-animation-name: myflipin; 	
+}
+
+.myflip.out {
+	-webkit-transform: rotateY(90deg);
+	-webkit-animation-name: dontmove;
+	-webkit-transform-origin: -100% 0;
+}
+
+@-webkit-keyframes myflipin {
+	from { 
+		-webkit-transform: rotateY(0);
+		-webkit-transform-origin: -100% 0;
+	}
+	to {
+		-webkit-transform: rotateY(90deg);
+		-webkit-transform-origin: -100% 0;
+	} 
+}

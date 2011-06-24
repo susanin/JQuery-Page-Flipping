@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Test page</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.0b1.css" />
+	<link rel="stylesheet" href="css/flip.css" />
+	<script type="text/javascript" src="js/jquery-1.6.1.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.0b1.js"></script>
+</head>
+<body>
+	<div data-role="page" id="index">
+		<div data-role="header">
+			<h1>Page header</h1>
+		</div>
+		<div data-role="content">
+			<p>Page content</p>
+			<a href="#first" data-transition="myflip">Next</a>
+		</div>
+		<div data-role="footer">
+			<h4>Page footer</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="first">
+		<div data-role="header">
+			<h1>First page header</h1>
+		</div>
+		<div data-role="content">
+			<a href="#index" data-transition="myflip">Prev</a>
+			<p>First page content</p>
+			<a href="#second" data-transition="myflip">Next</a>
+		</div>
+		<div data-role="footer">
+			<h4>First page footer</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="second">
+		<div data-role="header">
+			<h1>Second page header</h1>
+		</div>
+		<div data-role="content">
+			<a href="#first" data-transition="myflip">Prev</a>
+			<p>Second page content</p>
+			<a href="#third" data-transition="myflip">Next</a>
+		</div>
+		<div data-role="footer">
+			<h4>Second page footer</h4>
+		</div>
+	</div>
+	
+	<div data-role="page" id="third">
+		<div data-role="header">
+			<h1>Third page header</h1>
+		</div>
+		<div data-role="content">
+			<a href="#second" data-transition="myflip">Prev</a>
+			<p>Third page content</p>
+		</div>
+		<div data-role="footer">
+			<h4>Third page footer</h4>
+		</div>
+	</div>
+	
+</body>
+</html>
