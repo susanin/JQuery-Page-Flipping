@@ -157,6 +157,7 @@
         position:absolute;
         left:0;
         box-shadow: inset -5px -1px 4px 8px #888888;
+        -webkit-box-shadow:inset -5px -1px 4px 8px #888888;
     }
 
     #mybook .b-load > div img{
