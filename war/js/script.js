@@ -1,5 +1,19 @@
 $(document).ready(function(){
 
+    $('.h-menu .control').bind('tap',function(event){
+        if($(this).parent().hasClass('open')){
+            $('.h-menu .widgets').hide();
+            $('.h-menu .control').text('+');
+            $(this).parent().removeClass('open');
+        }else{
+            $('.h-menu .widgets').show();
+            $('.h-menu .control').text('-');
+            $(this).parent().addClass('open');
+        }
+    });
+
+
+
 	$(".b-load > div").each(function(i){
 		var zi = 10 - i;
 		$(this).css('z-index',zi);

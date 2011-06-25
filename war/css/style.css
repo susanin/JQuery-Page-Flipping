@@ -25,36 +25,89 @@ p{
     margin: 0 0 10px 0;
 }
 a{
-    color:#b06b72;
+    color:#b06b72 !important;
     text-decoration:none;
 }
 
 .page-wrapper{
-    /*position:relative;*/
-    background:#000000;
-    border:1px solid red;
+    
+    width:100%;
+    height:100%;
+
+}
+
+.page-wrapper .h-menu{
+    background:url("../img/h-menu_bg.png") 0 0 repeat-x;
+    border-radius:10px;
+    height:60px;
+    line-height:60px;
+    position:absolute;
+    top:3px;
+    right:3px;
+    z-index:20;
+    opacity:0.4;
+}
+.page-wrapper .h-menu ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    float:left;
+}
+.page-wrapper .h-menu ul li{
+    display:inline-block;
+    padding:0 5px;
+}
+.page-wrapper .h-menu .control{
+    color:#ffffff;
+    font-size:2em;
+    padding:0 15px;
+    font-weight:bold;
+    display:inline-block;
+    float:left;
+}
+.page-wrapper .h-menu .widgets{
+    display:none;
+    color:#ffffff;
+    font-size:0;
+}
+.page-wrapper .open{
+    opacity:1;
+}
+.page-wrapper .open .widgets{
+    display:inline;
+}
+.page-wrapper .h-menu .widgets li{
+    height:60px;
+    line-height:60px;
+    font-size:0;
+}
+.page-wrapper .h-menu .widgets li img{
+    vertical-align:middle;
+}
+.page-wrapper > div{
+    
 }
 
 
 
 .btn-next, .btn-prev {
-    background: url("../img/buttons.png") no-repeat scroll 0 -40px transparent;
+    background: url("../img/buttons_t.png") no-repeat 0 0;
     cursor: pointer;
-    height: 40px;
+    height: 60px;
     margin-top: -20px;
     position: absolute;
     top: 50%;
-    width: 41px;
+    width: 60px;
     z-index:20;
     font-size:0;
     text-decoration:none;
 }
 .btn-next {
-    background-position: -41px -40px;
-    right: -7px;
+    background-position: -60px 0;
+    right: -1px;
 }
 .btn-prev {
-    left: -7px;
+    left: -1px;
 }
 
 #mybook{
