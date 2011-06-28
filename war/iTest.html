@@ -10,6 +10,7 @@
         <script type="text/javascript" src="js/jquery-1.6.1.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.0b1.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/jquery.jst.js"></script>
     </head>
     <body>
 
@@ -64,11 +65,28 @@
                 <a href="#p-2" class="btn-prev" data-transition="slide">Prev</a>
             </div>
         </div>
-
+            <!--<input type="button" value="123" class="off" style="z-index:100;position:relative;"/>-->
+        <div class="jst">
+            <div class="cont">
+                <a>1</a>
+                <a>2</a>
+                <a>3</a>
+                <a>4</a>
+                <a>5</a>
+                <a>6</a>
+                <a>7</a>
+                <a>8</a>
+            </div>
+        </div>
 
 	</div>
 
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $('.jst').jst();
+        });
+    </script>
 
 
     </body>

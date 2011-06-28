@@ -150,3 +150,26 @@ a{
     box-shadow:0 0 25px #888888;
     
 }
+
+.jst{
+    position:absolute;
+    width:100%;
+    height:70px;
+    left:0;
+    bottom:0;
+    overflow:hidden;
+    z-index:30;
+    background:#000;
+    border:4px solid red;
+}
+.jst .cont{
+    width:9999em;
+    position:relative;
+} 
+.jst a{
+    display:inline-block;
+    height:70px;
+    width:100px;
+    border:2px solid red;
+    background:#fff;
+}
