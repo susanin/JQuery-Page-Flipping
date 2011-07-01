@@ -12,35 +12,22 @@ $(document).ready(function(){
         }
     });
 
-
-
 	$(".b-load > div").each(function(i){
 		var zi = 10 - i;
 		$(this).css('z-index',zi);
 	});
 
 
-	$('#next_page_button').bind('tap',function(event){
-        var nextSlide = $('.cur').next();
-		if(!nextSlide.length){return false;}
+    var thumbWrap = '';
+    $('.page-wrapper .page div').each(function(i){
+        //var htmlPage = $(this).clone().appendTo('.jst .wrapper');
+        var htmlPage = $(this).html();
+        var index = i + 1;
+        thumbWrap += "<div class='tPage'>"+htmlPage+"<a href='#p-"+index+"' class='goto'></a></div>";
+        //console.log(thumbWrap);
+    });
+    $('.jst .wrapper').html(thumbWrap);
 
 
-		var marg = parseInt('-770');
-		$(".b-load .cur").animate({left:marg+"px",opacity:0.5}, 1500, 'swing');
-		$(".b-load > div").removeClass('cur');
-		nextSlide.addClass('cur');
-	});
-
-	$('#prev_page_button').bind('tap',function(event){
-        var prevSlide = $('.cur').prev();
-		if(!prevSlide.length){return false;}
-
-
-		//var marg = parseInt(0);
-		$(prevSlide).animate({left:0,opacity:1}, 1500, 'swing');
-		$(".b-load > div").removeClass('cur');
-		prevSlide.addClass('cur');
-
-	});
 
 });

@@ -10,36 +10,30 @@
 (function($) {
 	$.fn.jst = function(options) {
 
-		// Default thresholds & swipe functions
+		// Default settings, functions
 		var defaults = {
 			threshold: {
 				x: 10,
 				y: 10
 			},
 			swipeLeft: function(cLeft) {
-                var c = $('.cont > a').length;
-                var w = $('.cont a').width();
-                var offs = $('.cont').offset();
-                /*alert('(offs.left '+(offs.left));
-                alert('(cLeft) '+(cLeft));
-                alert('(offs.left+cLeft)*(-1) '+(offs.left+cLeft)*(-1));
-                alert('w*c '+w*c);*/
+                var c = $('.wrapper > .tPage').length;
+                var w = $('.wrapper .tPage').width();
+                var offs = $('.wrapper').offset();
                 if(((offs.left)*(-1)+cLeft) > (w*c)){
-                    $('.cont').animate({left:((w*c)+10-screen.width)*(-1)+'px'},100);
+                    $('.wrapper').animate({left:((w*c)+10-screen.width)*(-1)+'px'},100, 'swing');
                 }else{
-                    $('.cont').animate({left:'-='+cLeft+'px'},100);
+                    $('.wrapper').animate({left:'-='+cLeft+'px'},100, 'swing');
                 }
             },
 			swipeRight: function(cRight) {
-                //alert('diff ' + cRight);
-                var offs = $('.cont').offset();
+                var offs = $('.wrapper').offset();
                 if(offs.left < cRight){
-                    $('.cont').animate({left:'+='+cRight*(-1)+'px'},100);
+                    $('.wrapper').animate({left:'+='+cRight*(-1)+'px'},100, 'swing');
                 }else{
-                    $('.cont').animate({left:'10px'},100);
+                    $('.wrapper').animate({left:'0'},100, 'swing');
                 }
 
-                //alert('offset ' + offs.left);
             }
 		};
 
@@ -49,24 +43,24 @@
 
 		return this.each(function() {
 
-			var me = $(this)
+			var me = $(this);
 
 			// Private variables for each element
-			var originalCoord = { x: 0, y: 0 }
-			var finalCoord = { x: 0, y: 0 }
+			var originalCoord = { x: 0, y: 0 };
+			var finalCoord = { x: 0, y: 0 };
 
 			// Screen touched, store the original coordinate
 			function touchStart(event) {
 				//console.log('Starting swipe gesture...')
-				originalCoord.x = event.targetTouches[0].pageX
-				originalCoord.y = event.targetTouches[0].pageY
+				originalCoord.x = event.targetTouches[0].pageX;
+				originalCoord.y = event.targetTouches[0].pageY;
 			}
 
 			// Store coordinates as finger is swiping
 			function touchMove(event) {
 			    event.preventDefault();
-				finalCoord.x = event.targetTouches[0].pageX // Updated X,Y coordinates
-				finalCoord.y = event.targetTouches[0].pageY
+				finalCoord.x = event.targetTouches[0].pageX; // Updated X,Y coordinates
+				finalCoord.y = event.targetTouches[0].pageY;
 			}
 
 			// Done Swiping
@@ -74,9 +68,9 @@
 			// Calculate if the swipe was left or right
 			function touchEnd(event) {
 				//console.log('Ending swipe gesture...')
-				var changeY = originalCoord.y - finalCoord.y
+				var changeY = originalCoord.y - finalCoord.y;
 				//if(changeY < defaults.threshold.y && changeY >= (defaults.threshold.y*-1)) {
-					changeX = originalCoord.x - finalCoord.x
+					changeX = originalCoord.x - finalCoord.x;
 
 					if(changeX > defaults.threshold.x) {
 						defaults.swipeLeft(changeX);
@@ -90,11 +84,11 @@
 			// Swipe was started
 			function touchStart(event) {
 				//console.log('Starting swipe gesture...')
-				originalCoord.x = event.targetTouches[0].pageX
-				originalCoord.y = event.targetTouches[0].pageY
+				originalCoord.x = event.targetTouches[0].pageX;
+				originalCoord.y = event.targetTouches[0].pageY;
 
-				finalCoord.x = originalCoord.x
-				finalCoord.y = originalCoord.y
+				finalCoord.x = originalCoord.x;
+				finalCoord.y = originalCoord.y;
 			}
 
 			// Swipe was canceled
