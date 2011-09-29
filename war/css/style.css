@@ -5,8 +5,8 @@ body {
     font-family: Arial,Verdana,Tahoma,Sans-Serif;
     font-size: 12px;
     line-height: 1.35;
-    margin-left: 0;
-    margin-top: 0px;
+    margin-left: 0px;
+    margin-top: 0;
 }
 input, textarea, select, th, td {
     font-family: Arial,Verdana,Tahoma,Sans-Serif;
